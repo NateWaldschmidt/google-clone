@@ -1,10 +1,15 @@
 <template>
     <div id="google-clone">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
         <main>
-            <img id="site-logo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo">
+            <h1>
+                <span class="color-blue">G</span><span class="color-red">o</span><span class="color-yellow">o</span><span class="color-blue">g</span><span class="color-green">l</span><span class="color-red">e</span>
+            </h1>
             <landing-search />
             <div id="button-group">
-                <landing-button type="submit">Google Search</landing-button>
+                <landing-button type="submit">{{ siteName }} Search</landing-button>
                 <landing-button type="submit">I'm Feeling Lucky</landing-button>
             </div>
         </main>
@@ -28,6 +33,7 @@ export default {
 
     data: function() {
         return {
+            siteName: 'Google',
             value: 'This is the inputted value.'
         }
     },
@@ -74,9 +80,15 @@ export default {
         flex-direction: column;
     }
 
-    #site-logo {
+    h1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 5rem;
         margin: 2rem 0;
     }
+    .color-blue { color: #4285F4; }
+    .color-red { color: #EA4335; }
+    .color-yellow { color: #FBBC05; }
+    .color-green { color: #34A853; }
 
     #button-group {
         margin-top: 1.5rem;
