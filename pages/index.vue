@@ -3,7 +3,7 @@
         <main>
             <img id="site-logo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo">
             <landing-search />
-            <div>
+            <div id="button-group">
                 <landing-button type="submit">Google Search</landing-button>
                 <landing-button type="submit">I'm Feeling Lucky</landing-button>
             </div>
@@ -72,5 +72,9 @@ export default {
 
     #site-logo {
         margin: 2rem 0;
+    }
+
+    #button-group {
+        margin-top: 1.5rem;
     }
 </style>
