@@ -8,6 +8,7 @@
                 <landing-button type="submit">I'm Feeling Lucky</landing-button>
             </section>
         </main>
+        <landing-footer />
     </div>
 </template>
 
@@ -48,10 +49,20 @@ export default {
 </style>
 
 <style scoped>
+    #google-clone {
+        position: absolute;
+        inset: 0 0 0 0;
+
+        display: flex;
+        flex-direction: column;
+    }
+
     main {
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        height: 100%;
     }
 
     label {
