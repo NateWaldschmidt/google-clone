@@ -24,19 +24,15 @@
                     <circle cx="3" cy="21" r="3" fill="#626368"/>
                 </svg>
             </button>
-            <button id="user-profile">N</button>
+            <button
+            id="user-profile"
+            v-on:click="hideProfile = !hideProfile"
+            >
+                N
+            </button>
         </div>
 
-        <aside id="profile-container">
-            <div id="big-profile-icon">
-                <span>N</span>
-            </div>
-            <div class="profile-group">
-                <p id="profile-title">Nathaniel Waldschmidt</p>
-                <address id="profile-email">Nathaniel.Waldsch@gmail.com</address>
-            </div>
-            <a id="profile-email-contact" href="mailto:nathaniel.waldsch@gmail.com">Contact Nathaniel</a>
-        </aside>
+        <profile-popout v-bind:hidden="hideProfile" />
 
         <aside id="application-container" v-bind:hidden="hideApps">
             <ul>
@@ -64,12 +60,18 @@
 </template>
 
 <script>
+import ProfilePopout from './profile-popout.vue'
 export default {
     name: 'landing-header',
 
+    components: [
+        ProfilePopout
+    ],
+
     data: function() {
         return {
-            hideApps: true
+            hideApps: true,
+            hideProfile: true,
         }
     }
 }
@@ -110,7 +112,7 @@ export default {
         text-decoration: underline;
     }
     
-    #profile-container, #application-container {
+    #application-container {
         position: absolute;
         top: calc(60px + 1rem);
         right: 1rem;
@@ -121,59 +123,6 @@ export default {
         border-radius: 8px;
 
         box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
-    }
-
-    #profile-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    #big-profile-icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        width: 80px;
-        height: 80px;
-        border-radius: 100%;
-
-        background-color: #f94144;
-
-        color: white;
-        font-size: 2.5rem;
-        font-weight: 500;
-    }
-
-    #profile-title {
-        margin: 0;
-
-        color: #202124;
-        font: 500 16px/22px Google Sans, Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
-        letter-spacing: 0.29px;
-    }
-
-    .profile-group {
-        text-align: center;
-    }
-
-    #profile-email {
-        margin: 0;
-
-        color: #5f6368;
-        font-style: normal;
-        font: 400 14px/19px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
-    }
-
-    #profile-email-contact {
-        padding: 8px 16px;
-        border: 1px solid #dadce0;
-        border-radius: 100px;
-
-        color: #3c4043;
-        font: 500 14px/16px Google Sans, Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
-        text-decoration: none;
     }
 
     #more-options, #user-profile {
