@@ -1,21 +1,37 @@
 <template>
-    <main>
-        <img id="site-logo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo">
-        <landing-search />
-        <landing-button type="submit">Google Search</landing-button>
-    </main>
+    <div id="google-clone">
+        <landing-header />
+        <main>
+            <landing-search />
+            <section>
+                <landing-button type="submit">Google Search</landing-button>
+            </section>
+        </main>
+        <landing-footer />
+    </div>
+    <div id="google-clone">
+      <main>
+          <img id="site-logo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo">
+          <landing-search />
+          <landing-button type="submit">Google Search</landing-button>
+          <landing-button type="submit">I'm Feeling Lucky</landing-button>
+      </main>
+      <landing-footer />
+    </div>
 </template>
 
 <script>
 import LandingButton from '../components/landing-button.vue';
 import LandingSearch from '../components/landing-search.vue';
+import LandingFooter from '../components/landing-footer.vue';
 
 export default {
     name: 'IndexPage',
 
     components: {
         LandingButton,
-        LandingSearch
+        LandingSearch,
+        LandingFooter
     },
 
     data: function() {
@@ -32,11 +48,29 @@ export default {
 }
 </script>
 
+<style>
+    /* Allows easier styling of the header. */
+    body {
+        height: 100vh;
+        margin: 0;
+    }
+</style>
+
 <style scoped>
+    #google-clone {
+        position: absolute;
+        inset: 0 0 0 0;
+
+        display: flex;
+        flex-direction: column;
+    }
+
     main {
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        height: 100%;
     }
 
     label {
