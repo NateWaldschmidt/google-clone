@@ -11,7 +11,7 @@
         <div class="header-link-group">
             <a href="https://mail.google.com">Gmail</a>
             <a href="https://www.google.com/imghp?hl=en&ogbl">Images</a>
-            <button id="more-options" v-on:focus="hideApps = false" v-on:blur="hideApps = true">
+            <button id="more-options" v-on:click="hideApps = !hideApps" v-on:blur="hideApps = true">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <circle cx="3" cy="3" r="3" fill="#626368"/>
                     <circle cx="21" cy="3" r="3" fill="#626368"/>
@@ -24,8 +24,16 @@
                     <circle cx="3" cy="21" r="3" fill="#626368"/>
                 </svg>
             </button>
-            <button id="user-profile">N</button>
+            <button
+            id="user-profile"
+            v-on:click="hideProfile = !hideProfile"
+            >
+                N
+            </button>
         </div>
+
+        <profile-popout v-bind:hidden="hideProfile" />
+
         <aside id="application-container" v-bind:hidden="hideApps">
             <ul>
                 <li>
@@ -52,12 +60,18 @@
 </template>
 
 <script>
+import ProfilePopout from './profile-popout.vue'
 export default {
     name: 'landing-header',
 
+    components: [
+        ProfilePopout
+    ],
+
     data: function() {
         return {
-            hideApps: true
+            hideApps: true,
+            hideProfile: true,
         }
     }
 }
@@ -96,6 +110,19 @@ export default {
 
     .header-link-group > a:hover, .header-link-group > a:active {
         text-decoration: underline;
+    }
+    
+    #application-container {
+        position: absolute;
+        top: calc(60px + 1rem);
+        right: 1rem;
+        
+        width: 356px;
+        padding: 1rem;
+        border: 1px solid rgba(0,0,0,0.2);
+        border-radius: 8px;
+
+        box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
     }
 
     #more-options, #user-profile {
@@ -146,16 +173,7 @@ export default {
     }
 
     #application-container {
-        position: absolute;
-        top: calc(60px + 1rem);
-        right: 1rem;
-
         height: 438px;
-        padding: 1rem;
-        border: 1px solid rgba(0,0,0,0.2);
-        border-radius: 8px;
-
-        box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
 
         overflow-y: scroll;
     }
