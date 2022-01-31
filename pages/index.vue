@@ -3,6 +3,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <landing-header />
         <main>
             <h1>
                 <span class="color-blue">G</span><span class="color-red">o</span><span class="color-yellow">o</span><span class="color-blue">g</span><span class="color-green">l</span><span class="color-red">e</span>
@@ -21,6 +22,7 @@
 import LandingButton from '../components/landing-button.vue';
 import LandingSearch from '../components/landing-search.vue';
 import LandingFooter from '../components/landing-footer.vue';
+import LandingHeader from '../components/landing-header.vue';
 
 export default {
     name: 'IndexPage',
@@ -28,7 +30,8 @@ export default {
     components: {
         LandingButton,
         LandingSearch,
-        LandingFooter
+        LandingFooter,
+        LandingHeader
     },
 
     data: function() {
