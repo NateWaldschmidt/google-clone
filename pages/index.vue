@@ -1,12 +1,14 @@
 <template>
     <div id="google-clone">
-      <main>
-          <img id="site-logo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo">
-          <landing-search />
-          <landing-button type="submit">Google Search</landing-button>
-          <landing-button type="submit">I'm Feeling Lucky</landing-button>
-      </main>
-      <landing-footer />
+        <main>
+            <img id="site-logo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo">
+            <landing-search />
+            <div>
+                <landing-button type="submit">Google Search</landing-button>
+                <landing-button type="submit">I'm Feeling Lucky</landing-button>
+            </div>
+        </main>
+        <landing-footer />
     </div>
 </template>
 
