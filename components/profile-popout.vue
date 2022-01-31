@@ -1,13 +1,21 @@
 <template>
     <aside id="profile-container">
-        <div id="big-profile-icon">
-            <span>N</span>
+        <section id="profile-top">
+            <div id="big-profile-icon">
+                <span>N</span>
+            </div>
+            <div class="profile-group">
+                <p id="profile-title">Nathaniel Waldschmidt</p>
+                <address id="profile-email">Nathaniel.Waldsch@gmail.com</address>
+            </div>
+            <a id="profile-email-contact" href="mailto:nathaniel.waldsch@gmail.com">Contact Nathaniel</a>
+        </section>
+
+        <a id="profile-projects" href="">View more projects</a>
+
+        <div id="profile-phone-container">
+            <a id="profile-phone-link" href="tel:16309011086">Call Me</a>
         </div>
-        <div class="profile-group">
-            <p id="profile-title">Nathaniel Waldschmidt</p>
-            <address id="profile-email">Nathaniel.Waldsch@gmail.com</address>
-        </div>
-        <a id="profile-email-contact" href="mailto:nathaniel.waldsch@gmail.com">Contact Nathaniel</a>
     </aside>
 </template>
 
@@ -24,11 +32,13 @@ export default {
         right: 1rem;
         
         width: 356px;
-        padding: 1rem;
         border: 1px solid rgba(0,0,0,0.2);
         border-radius: 8px;
+        box-sizing: border-box;
 
         box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+
+        overflow: hidden;
     }
     #profile-container[hidden] {
         display: none;
@@ -39,6 +49,15 @@ export default {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
+    }
+
+    #profile-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        padding: 1rem;
     }
 
     #big-profile-icon {
@@ -61,7 +80,7 @@ export default {
         margin: 0;
 
         color: #202124;
-        font: 500 16px/22px Google Sans, Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+        font: 500 16px/22px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
         letter-spacing: 0.29px;
     }
 
@@ -83,7 +102,7 @@ export default {
         border-radius: 100px;
 
         color: #3c4043;
-        font: 500 14px/16px Google Sans, Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+        font: 500 14px/16px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
         text-decoration: none;
 
         transition: all ease 300ms;
@@ -93,6 +112,51 @@ export default {
     }
 
     #profile-email-contact:active {
+        background-color: #e8e8e9;
+        border-color: transparent;
+        box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+    }
+
+    #profile-projects {
+        width: 100%;
+        padding: 14px 41px;
+        box-sizing: border-box;
+
+        color: #3c4043;
+        font: 500 14px/16px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+        text-decoration: none;
+        letter-spacing: 0.25px;
+        border-top: 1px solid rgba(0,0,0,.1);
+        border-bottom: 1px solid rgba(0,0,0,.1);
+
+        transition: all ease 300ms;
+    }
+    #profile-projects:hover {
+        background-color: #f7f8f8;
+    }
+
+    #profile-phone-container {
+        margin-bottom: 1rem;
+    }
+
+    #profile-phone-link {
+        display: block;
+
+        margin: 0.125rem 0;
+        padding: 8px 16px;
+        border: 1px solid #dadce0;
+        border-radius: 4px;
+
+        color: #3c4043;
+        font: 500 14px/16px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+        text-decoration: none;
+
+        transition: all ease 300ms;
+    }
+    #profile-phone-link:hover {
+        background-color: #f7f8f8;
+    }
+    #profile-phone-link:active {
         background-color: #e8e8e9;
         border-color: transparent;
         box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
