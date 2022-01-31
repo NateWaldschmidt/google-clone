@@ -1,15 +1,5 @@
 <template>
     <div id="google-clone">
-        <landing-header />
-        <main>
-            <landing-search />
-            <section>
-                <landing-button type="submit">Google Search</landing-button>
-            </section>
-        </main>
-        <landing-footer />
-    </div>
-    <div id="google-clone">
       <main>
           <img id="site-logo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo">
           <landing-search />
