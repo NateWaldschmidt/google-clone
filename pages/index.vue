@@ -74,6 +74,10 @@ export default {
 
         height: 100%;
     }
+    main > * {
+        position: relative;
+        top: -13vh;
+    }
 
     label {
         display: flex;
