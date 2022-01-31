@@ -5,17 +5,25 @@
             <landing-search />
             <section>
                 <landing-button type="submit">Google Search</landing-button>
-                <landing-button type="submit">I'm Feeling Lucky</landing-button>
             </section>
         </main>
         <landing-footer />
+    </div>
+    <div id="google-clone">
+      <main>
+          <img id="site-logo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo">
+          <landing-search />
+          <landing-button type="submit">Google Search</landing-button>
+          <landing-button type="submit">I'm Feeling Lucky</landing-button>
+      </main>
+      <landing-footer />
     </div>
 </template>
 
 <script>
 import LandingButton from '../components/landing-button.vue';
-import LandingHeader from '../components/landing-header.vue';
 import LandingSearch from '../components/landing-search.vue';
+import LandingFooter from '../components/landing-footer.vue';
 
 export default {
     name: 'IndexPage',
@@ -23,7 +31,7 @@ export default {
     components: {
         LandingButton,
         LandingSearch,
-        LandingHeader
+        LandingFooter
     },
 
     data: function() {
@@ -68,5 +76,9 @@ export default {
     label {
         display: flex;
         flex-direction: column;
+    }
+
+    #site-logo {
+        margin: 2rem 0;
     }
 </style>
