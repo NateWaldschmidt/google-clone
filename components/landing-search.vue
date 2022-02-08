@@ -5,7 +5,7 @@
 
             <input
             type="search"
-            v-model="value"
+            v-model="searchValue"
             v-on:input="search"
             v-on:focus="hideSearchesResults = false"
             v-on:blur="hideSearchesResults = true"
@@ -47,6 +47,10 @@
 export default {
     name: 'landing-search',
 
+    props: {
+        searchValue: ''
+    },
+
     data: function() {
         return {
             // Toggles the showing and hiding of previous searches.
@@ -56,7 +60,7 @@ export default {
     
     methods: {
         search: function() {
-            console.log(this.value);
+            console.log(this.searchValue);
         }
     }
 }

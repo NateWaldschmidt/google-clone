@@ -1,5 +1,5 @@
 <template>
-    <button v-bind:type="type">
+    <button v-bind:type="buttonType">
         <slot></slot>
     </button>
 </template>
@@ -9,7 +9,10 @@ export default {
     name: 'landing-button',
 
     props: {
-        type: 'button'
+        buttonType: {
+            default: 'button',
+            type: String
+        }
     }
 }
 </script>

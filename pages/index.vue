@@ -10,8 +10,8 @@
             </h1>
             <landing-search />
             <div id="button-group">
-                <landing-button type="submit">{{ siteName }} Search</landing-button>
-                <landing-button type="submit">I'm Feeling Lucky</landing-button>
+                <landing-button buttonType="submit">{{ siteName }} Search</landing-button>
+                <landing-button buttonType="submit">I'm Feeling Lucky</landing-button>
             </div>
         </main>
         <landing-footer />

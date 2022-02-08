@@ -64,9 +64,9 @@ import ProfilePopout from './profile-popout.vue'
 export default {
     name: 'landing-header',
 
-    components: [
+    components: {
         ProfilePopout
-    ],
+    },
 
     data: function() {
         return {
