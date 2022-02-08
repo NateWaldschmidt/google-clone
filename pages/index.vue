@@ -6,7 +6,7 @@
         <landing-header />
         <main>
             <h1>
-                <span class="color-blue">G</span><span class="color-red">o</span><span class="color-yellow">o</span><span class="color-blue">g</span><span class="color-green">l</span><span class="color-red">e</span>
+                <span class="color-blue">N</span><span class="color-red">a</span><span class="color-yellow">t</span><span class="color-blue">h</span><span class="color-green">a</span><span class="color-red">n</span><span class="color-blue">i</span><span class="color-red">e</span><span class="color-yellow">l</span>
             </h1>
             <landing-search />
             <div id="button-group">
