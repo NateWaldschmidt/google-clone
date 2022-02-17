@@ -1,4 +1,4 @@
 # Google Clone
 
 ### Live Site
-![Google Clone](https://gooooooogle.netlify.app/)
+Check out the [Google Clone](https://gooooooogle.netlify.app/) live on Netlify right now.
